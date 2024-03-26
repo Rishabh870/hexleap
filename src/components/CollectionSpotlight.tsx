@@ -50,7 +50,7 @@ const CollectionSpotlight = () => {
   );
 
   return (
-    <div className=" w-full h-screen  py-14 md:py-3 ">
+    <div className=" w-full h-full  py-14 md:py-3 ">
       <div className=" w-full h-full flex flex-col items-center px-4  justify-evenly lg:w-4/5 mx-auto">
         <div className=" w-full h-fit text-center">
           <h1 className="text-3xl font-bold">Collection Spotlight</h1>
@@ -89,6 +89,3 @@ const CollectionSpotlight = () => {
 };
 
 export default CollectionSpotlight;
-{
-  /* <CollectionCard {...data[index]} /> */
-}
