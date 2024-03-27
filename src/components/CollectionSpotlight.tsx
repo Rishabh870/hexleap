@@ -9,7 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import React from "react";
+import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
 
 const data = [
   {
@@ -49,39 +50,60 @@ const CollectionSpotlight = () => {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
+  const { resolvedTheme } = useTheme();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Listen for theme changes
+  useEffect(() => {
+    setIsDarkMode(resolvedTheme === "dark");
+  }, [resolvedTheme]);
+
   return (
-    <div className=" w-full h-full  py-14 md:py-3 ">
-      <div className=" w-full h-full flex flex-col items-center px-4  justify-evenly lg:w-4/5 mx-auto">
-        <div className=" w-full h-fit text-center">
-          <h1 className="text-3xl font-bold">Collection Spotlight</h1>
-          <p className="text-xs mt-3">
-            Discover extraordinary moments with our Spotlight Collection
-            metatickets—exclusive access to premium events for an unforgettable
-            experience. Grab yours today!
-          </p>
-        </div>
-        <div className="w-full h-fit text-center">
-          <Carousel
-            plugins={[plugin.current]}
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-            className="w-full md:w-[40rem] lg:w-[50rem]  mx-auto "
-          >
-            <CarouselContent className="-ml-1 my-3">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-1 md:basis-1/2 flex justify-center items-center lg:basis-1/3"
-                >
-                  <div className="p-2">
-                    <CollectionCard {...data[index]} />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+    <div className=" w-full h-full 2xl:h-screen px-5 py-14 md:px-[5.5rem]">
+      <div
+        style={{
+          background: `${
+            isDarkMode
+              ? "linear-gradient(to bottom, #18282A 100%, #221A2C 100%)"
+              : ""
+          }`,
+        }}
+        className="p-6 h-full my-auto"
+      >
+        <div className=" w-full h-full flex flex-col items-center px-4  justify-evenly mx-auto">
+          <div className=" w-full h-fit text-center">
+            <h1 className="text-3xl font-bold">Collection Spotlight</h1>
+            <p className="text-xs mt-3">
+              Discover extraordinary moments with our Spotlight Collection
+              metatickets—exclusive access to premium events for an
+              unforgettable experience. Grab yours today!
+            </p>
+          </div>
+          <div className="w-full h-fit text-center">
+            <Carousel
+              plugins={[plugin.current]}
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+              className="w-full md:w-[40rem] lg:w-[50rem]  mx-auto "
+            >
+              <CarouselContent className="-ml-1 my-3">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="pl-1 md:basis-1/2 flex justify-center items-center lg:basis-1/3"
+                  >
+                    <div className="p-2">
+                      <CollectionCard {...data[index]} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className=" rounded-none text-blue-500 border-2 border-blue-500 bg-transparent py-5" />
+              {/* Style the previous button */}
+              <CarouselNext className="rounded-none text-blue-500 border-2 border-blue-500 bg-transparent py-5" />
+              {/* Style the next button */}
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>

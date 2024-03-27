@@ -1,5 +1,6 @@
 "use client";
 
+import AdCard from "./cards/AdCard";
 import SportCard from "./cards/SportCard";
 
 const sportData = [
@@ -31,15 +32,23 @@ const sportData = [
 
 const Sports = () => {
   return (
-    <div className="h-full py-10 md:py-3 lg:h-screen w-full flex justify-evenly flex-col items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {sportData.map((sport, index) => (
-          <SportCard key={index} {...sport} />
-        ))}
+    <div className="h-full py-10 2xl:h-screen  w-full flex justify-evenly flex-col items-center md:p-7">
+      <div className=" w-fit mx-auto">
+        <h1 className="text-2xl border-b-4 border-blue-500 font-bold w-fit">
+          Sports
+        </h1>
+        <div className="flex justify-evenly flex-col items-center mt-3 w-full h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 mb-5 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {sportData.map((sport, index) => (
+              <SportCard key={index} {...sport} />
+            ))}
+            <AdCard />
+          </div>
+          <button className="text-white text-sm bg-[#2C9CF0] rounded-sm px-6 py-3">
+            See More
+          </button>
+        </div>
       </div>
-      <button className="text-white text-sm bg-[#2C9CF0] rounded-sm px-6 py-3">
-        See More
-      </button>
     </div>
   );
 };

@@ -76,18 +76,18 @@
 }
 
 .cut {
-  background: radial-gradient(9.5px at left 68.5%, #0000 98%, white) left,
-    radial-gradient(9.5px at right 68.5%, #0000 98%, white) right;
+  background: radial-gradient(9.5px at left 68.5%, transparent 98%, white) left,
+    radial-gradient(9.5px at right 68.5%, transparent 98%, white) right;
 
   background-size: 51% 100%;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0px 8px rgb(196, 196, 196));
+  filter: drop-shadow(0 0px 8px rgb(160, 160, 160));
 }
 .dark-cut {
-  background: radial-gradient(9.5px at left 68%, #292b32 98%, #3b3e47) left,
-    radial-gradient(9.5px at right 68%, #292b32 98%, #3b3e47) right;
+  background: radial-gradient(9.5px at left 68%, transparent 98%, #3b3e47) left,
+    radial-gradient(9.5px at right 68%, transparent 98%, #3b3e47) right;
 
   background-size: 51% 100%;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0px 8px #1d1d1d56);
+  filter: drop-shadow(0 0px 8px rgb(26, 26, 26));
 }

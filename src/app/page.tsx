@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className=" bg-[#F7F7F8] dark:bg-[#292B32] h-full overflow-hidden w-full ">
-      <div className=" fixed">
+      <div className=" fixed m-1 md:m-4">
         <ModeToggle />
       </div>
 

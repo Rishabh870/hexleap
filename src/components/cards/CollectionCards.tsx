@@ -23,7 +23,9 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
     setIsDarkMode(resolvedTheme === "dark");
   }, [resolvedTheme]);
   return (
-    <div className={`${isDarkMode ? "dark-cut" : "cut"} h-[30rem] w-[13rem]`}>
+    <div
+      className={`${isDarkMode ? "dark-cut" : "cut"} h-[30rem] w-[13rem]   `}
+    >
       {/* First Part: Image */}
       <div className="p-3 pb-0 relative h-[19.6rem]">
         <div className=" h-full">

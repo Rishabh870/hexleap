@@ -11,11 +11,11 @@ interface SportCardProps {
 const SportCard = ({ img, name, eventNumber, sport }: SportCardProps) => {
   return (
     <>
-      <div className="max-w-md h-[510px] w-[240px] mx-auto bg-white dark:bg-[#3B3E47]  shadow-lg shadow-[#d1d1d1] dark:shadow-[#191a1b] mb-4 p-3">
+      <div className="max-w-md h-[460px] w-[220px] mx-auto bg-white dark:bg-[#3B3E47]  shadow-lg shadow-[#d1d1d1] dark:shadow-[#191a1b] mb-4 p-3">
         {/* dark:bg-[#3B3E47] */}
 
         {/* Top part for image */}
-        <div className=" pb-0 relative h-3/4">
+        <div className=" pb-0 relative h-[20rem]">
           <div className=" h-full">
             <img className="object-cover w-full h-full" src={img} alt={name} />
           </div>
@@ -24,7 +24,7 @@ const SportCard = ({ img, name, eventNumber, sport }: SportCardProps) => {
         <div className="my-4">
           <h2 className="text-[17px] m-0 font-semibold">{name}</h2>
         </div>
-        <div className=" h-1/4">
+        <div className=" h-fit">
           {/* Name */}
 
           {/* Event Number and Sport */}
