@@ -35,7 +35,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
 
       {/* Second Part: Divider */}
       <div className=" px-3 relative my-[.8rem] rounded-lg flex items-center justify-center">
-        <div className="relative w-full h-0 outline-dashed outline-1 outline-[#292B32] dark:outline-[#F7F7F8]"></div>
+        <div className="relative w-full h-0 border-t-2 mt-[.05rem]  border-spacing-3 border-dashed border-[#adadad] dark:border-[#F7F7F8] "></div>
       </div>
 
       {/* Third Part: Text */}

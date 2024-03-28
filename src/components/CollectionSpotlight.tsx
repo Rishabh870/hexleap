@@ -90,7 +90,7 @@ const CollectionSpotlight = () => {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem
                     key={index}
-                    className=" md:basis-1/2 flex justify-center items-center lg:basis-1/3"
+                    className=" sm:basis-1/2 flex justify-center items-center lg:basis-1/3"
                   >
                     <div className="p-2">
                       <CollectionCard {...data[index]} />
