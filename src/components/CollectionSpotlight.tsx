@@ -59,7 +59,7 @@ const CollectionSpotlight = () => {
   }, [resolvedTheme]);
 
   return (
-    <div className=" w-full h-full 2xl:h-screen px-5 py-14 md:px-[5.5rem]">
+    <div className=" w-full h-full 2xl:h-screen py-14 md:px-[3rem] xl:px-[5.5rem]">
       <div
         style={{
           background: `${
@@ -68,9 +68,9 @@ const CollectionSpotlight = () => {
               : ""
           }`,
         }}
-        className="p-6 h-full my-auto"
+        className="py-6 h-full max-w-[73rem] m-auto"
       >
-        <div className=" w-full h-full flex flex-col items-center px-4  justify-evenly mx-auto">
+        <div className=" w-full h-full flex flex-col items-center px-4 justify-evenly mx-auto">
           <div className=" w-full h-fit text-center">
             <h1 className="text-3xl font-bold">Collection Spotlight</h1>
             <p className="text-xs mt-3">
@@ -86,11 +86,11 @@ const CollectionSpotlight = () => {
               onMouseLeave={plugin.current.reset}
               className="w-full md:w-[40rem] lg:w-[50rem]  mx-auto "
             >
-              <CarouselContent className="-ml-1 my-3">
+              <CarouselContent className=" my-3">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem
                     key={index}
-                    className="pl-1 md:basis-1/2 flex justify-center items-center lg:basis-1/3"
+                    className=" md:basis-1/2 flex justify-center items-center lg:basis-1/3"
                   >
                     <div className="p-2">
                       <CollectionCard {...data[index]} />
