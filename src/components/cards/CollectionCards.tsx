@@ -6,6 +6,7 @@ interface CollectionCardProps {
   title: string;
   dateTime: string;
   address: string;
+  buttonText: string;
 }
 
 const CollectionCard: React.FC<CollectionCardProps> = ({
@@ -13,6 +14,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
   title,
   dateTime,
   address,
+  buttonText,
 }) => {
   // Use state to manage dark mode
   const { resolvedTheme } = useTheme();
@@ -51,8 +53,8 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
         </p>
 
         {/* Fourth Part: Button */}
-        <button className="bg-black text-white text-sm py-2 px-4 w-full">
-          Learn More
+        <button className="bg-black text-white text-xs py-2 px-4 w-full">
+          {buttonText}
         </button>
       </div>
     </div>
